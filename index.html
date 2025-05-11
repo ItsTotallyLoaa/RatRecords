@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RatRecord Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the music player */
+        .music-player {
+            background-color: #f0f0f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .player-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .play-pause-button {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background-color: #6b7280;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+        .play-pause-button:hover {
+            background-color: #374151;
+        }
+        .play-pause-button i {
+            font-size: 1.5rem;
+        }
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .volume-slider {
+            width: 8rem;
+            height: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: #e5e7eb;
+            cursor: pointer;
+        }
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            background-color: #6b7280;
+            cursor: pointer;
+        }
+        .volume-slider::-moz-range-thumb {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            background-color: #6b7280;
+            cursor: pointer;
+            border: none;
+        }
+        .track-info {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+        .track-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        .artist-name {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 0.5rem;
+            background-color: #e5e7eb;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #6b7280;
+            border-radius: 0.5rem;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+        .progress-bar:hover .progress-bar-fill {
+            background-color: #374151;
+        }
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.25rem;
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-purple-600 text-white py-4 shadow-md">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold text-center">RatRecord Company</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="text-center">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Your one-stop shop for vinyl and CDs</h2>
+            <p class="text-gray-600 mb-6">We offer a wide selection of new and used records and CDs, spanning all genres.</p>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <article class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Featured Vinyl</h3>
+                <img src="https://placehold.co/400x400/EEE/31343C" alt="Featured Vinyl" class="rounded-md mb-4 w-full h-auto">
+                <p class="text-gray-600 mb-4">Explore our curated selection of vinyl records.</p>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Shop Vinyl</button>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Featured CDs</h3>
+                <img src="https://placehold.co/400x400/EEE/31343C" alt="Featured CD" class="rounded-md mb-4 w-full h-auto">
+                <p class="text-gray-600 mb-4">Discover our diverse collection of CDs.</p>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Shop CDs</button>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Rare Finds</h3>
+                <img src="https://placehold.co/400x400/EEE/31343C" alt="Rare Find" class="rounded-md mb-4 w-full h-auto">
+                <p class="text-gray-600 mb-4">Find that special, hard-to-find item.</p>
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Explore Rare Finds</button>
+            </article>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">About Us</h2>
+            <p class="text-gray-700 text-center">
+                Welcome to RatRecord, the ultimate destination for authentic artist merchandise and music collectibles. We proudly showcase and sell exclusive releases from rising talents Shimi, ABS, and Madi — artists pushing creative boundaries in sound and style. Whether you're a dedicated fan or a new listener, explore our curated collection of vinyl records, CDs, and limited-edition posters that celebrate their artistry. Every item is crafted with care and made for true music lovers who value quality, originality, and the stories behind the music.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 RatRecord Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
